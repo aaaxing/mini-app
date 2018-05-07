@@ -1,0 +1,19 @@
+<map
+    id="map"
+    class='maps'
+    hidden='{{!show}}'
+    show-location="{{true}}"
+    latitude="{{center.latitude}}"
+    longitude="{{center.longitude}}"
+    scale="{{center.scale}}"
+    polyline="{{polyline}}"
+    markers = "{{markers}}"
+    controls = "{{controls}}"
+    bindcontroltap='tapControl'
+></map>
+
+<cover-view class='data' wx:if="{{show}}">
+    <cover-view class='detail'>时间:{{dataNow.time}}</cover-view>
+    <cover-view class='detail'>速度:{{dataNow.speed}}km/h</cover-view>
+    <cover-view class='detail'>限速:{{dataNow.limitSpeed}}km/h</cover-view>
+</cover-view>

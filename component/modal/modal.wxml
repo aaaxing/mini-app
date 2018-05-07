@@ -1,0 +1,11 @@
+<view class='wx_modal_container' hidden="{{!isShow}}">
+    <view class='wx-mask'></view>
+    <view class='wx-modal'>
+        <view class='wx-modal-title font-s'>{{ title }}</view>
+        <view class='wx-modal-content font-s'>{{ content }}</view>
+        <view class='wx-modal-footer'>
+          <view class='wx-modal-btn' catchtap='_cancelEvent' hidden="{{!cancelText?true:false}}">{{ cancelText }}</view>
+          <view class='wx-modal-btn' catchtap='_confirmEvent' style='color:#ff8400;'>{{ confirmText }}</view>
+        </view>
+    </view>
+</view>

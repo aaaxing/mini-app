@@ -1,0 +1,46 @@
+<view hidden="{{!show}}" class='calenda-container'>
+    <view class="headbox2">
+        <view class="headdate">一</view>
+        <view class="headdate">二</view>
+        <view class="headdate">三</view>
+        <view class="headdate">四</view>
+        <view class="headdate">五</view>
+        <view class="headdate">六</view>
+        <view class="headdate">日</view>
+    </view>
+    <view class="headbox">
+        <view class="headdate">一</view>
+        <view class="headdate">二</view>
+        <view class="headdate">三</view>
+        <view class="headdate">四</view>
+        <view class="headdate">五</view>
+        <view class="headdate">六</view>
+        <view class="headdate">日</view>
+    </view>
+    <view class="mouth" wx:for="{{date}}" wx:for-item="item" wx:for-index="x" wx:key='{{x}}'>
+        <view class="mouthhead"  style='color:#ff8400'>{{item.year}}年{{item.month}}月</view>
+        <view class="daybox">
+            <view class="day" wx:if="{{item.starts>1}}"></view>
+            <view class="day" wx:if="{{item.starts>2}}"></view>
+            <view class="day" wx:if="{{item.starts>3}}"></view>
+            <view class="day" wx:if="{{item.starts>4}}"></view>
+            <view class="day" wx:if="{{item.starts>5}}"></view>
+            <view class="day" wx:if="{{item.starts>6}}"></view>
+            <view class="day {{items.selected? 'bc':''}}" wx:for="{{item.days}}" wx:for-index="y" wx:for-item="items" bindtap='pickDate' wx:key="{{y}}"
+                data-year = "{{items.year}}"
+                data-month = "{{items.month}}"
+                data-day = "{{items.day}}"
+                data-x = "{{x}}"
+                data-y = "{{y}}"
+            >
+                <view class="actname {{items.selected? 'bc2':''}}"></view>
+                    {{items.day}}
+                <view class="actname2 {{items.selected? 'bc2':''}}">{{items.describe}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="none88" wx:if="{{pagetype=='day'}}"></view>
+    <view style='height:90rpx;'></view>
+    <button class='buttons back' bindtap="chooseBack">取消</button>
+    <button class='buttons confirm' bindtap="chooseDate">确认</button>
+</view>

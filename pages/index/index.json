@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "modal": "/component/modal/modal",
+        "calenda": "/component/calenda/calenda",
+        "picker": "/component/picker/picker",
+        "sportMap": "/component/sportMap/sportMap"
+    }
+}

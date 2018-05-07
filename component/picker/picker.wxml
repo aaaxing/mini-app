@@ -1,0 +1,16 @@
+<view class='head-picker-box' catch:tap='tapOutSide'>
+    <view class='pickers font-s {{}}' bindtap='openPicker' style='{{pickerShow?"color:#539FDD;":""}}'>
+        {{value}}
+        <image src="{{pickerShow?'icon/up.png':'icon/down.png'}}"  style='width:30rpx;height:30rpx;position:absolute;top:20rpx;' mode='scaleToFill'></image>
+    </view>
+    <view class="weui-cells weui-cells_after-title {{index==1?'pos1':index==2?'pos2':index==3?'pos3':'pos4'}}" wx:if='{{pickerShow}}' style='width:750rpx;'>
+        <view class="weui-cell font-s" wx:for='{{list}}' wx:for-index="index" wx:for-item="item" hover-class="weui-cell_active" bindtap='choosePicker' data-picker-Label='{{item}}' style="position:relative;{{item == value?'background:#ececec':''}}">
+            <image src="icon/check.png" mode='scaleToFill' class='check {{item == value?"checkOne":"checkTwo"}}'></image>
+            <view class="weui-cell__bd {{item == value?'cone':'ctwo'}}" style='margin-left:30rpx'>{{item}}</view>
+        </view>
+        <view style='height:20rpx;'></view>
+    </view>
+</view>
+<view class='wx-mask' hidden='{{!pickerShow}}'>
+    <view style='height:70rpx;width:100%;background:white;'></view>
+</view>

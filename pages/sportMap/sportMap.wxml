@@ -1,0 +1,6 @@
+<sportMap
+    id="sportMap"
+    ctrlScale="{{ctrlScale}}"
+    datas="{{routeData}}"
+>
+</sportMap>

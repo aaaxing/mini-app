@@ -1,0 +1,55 @@
+<!--选择器组件-->
+<view style="height:70rpx;width:100%;background:white;z-index:5000;border-bottom:1px solid #E5E5E5;">
+    <picker
+        id='picker1'
+        list="{{orderStatusList}}"
+        value='全部状态'
+        bindoutPutValue='changeStatus'
+        bindclosePicker='tapOutSide'
+        index="{{1}}"
+    ></picker>
+    <picker
+        id='picker2'
+        list="{{timeList}}"
+        value='全部时间'
+        bindoutPutValue='changeTime'
+        bindclosePicker='tapOutSide'
+        index="{{2}}"
+    ></picker>
+</view>
+
+
+
+<view style="margin-top:40rpx">
+    <button bindtap="openModal">打开弹窗</button>
+</view>
+<!--弹窗-->
+<modal
+    id='modal'
+    title='标题'
+    content='内容内容内容*******'
+    cancelText='取消'
+    confirmText='确认'
+    bind:confirmEvent="confirm"
+    bind:cancelEvent="cancel"
+    >
+</modal>
+
+
+<view style="margin-top:40rpx">
+    <button bindtap="openCalenda">打开日历</button>
+</view>
+<calenda
+    id='calenda'
+    startDate="{{calendaStartDate}}"
+    endDate="{{calendaEndDate}}"
+    reverse="{{true}}"
+    bind:change='changeCalenda'
+    bind:close='closeCalenda'
+>
+</calenda>
+
+
+<view style="margin-top:40rpx">
+    <button bindtap="toSportMap">移动地图</button>
+</view>
